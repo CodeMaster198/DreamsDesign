@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/ikraa.png" type="image/x-icon">
+
+</head>
+<style>
+    
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+header nav {
+    background: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.product-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-image img {
+    max-width: 300px;
+    margin-right: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-details .price {
+    font-size: 20px;
+    color: #e74c3c;
+}
+
+.product-details .description {
+    margin: 15px 0;
+    font-size: 25px;
+}
+
+.rating {
+    font-size: 18px;
+    color: #ffcc00;
+}
+
+.form-section {
+    margin-top: 20px; /* Space above the form */
+}
+
+.form-section form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; /* Increased gap between inputs */
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 95%;
+}
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0); }
+}
+.vibrate {
+    animation: vibrate 0.7s ease infinite; /* Add infinite vibration animation */
+}
+form button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #2ecc71;
+}
+
+.quantity-section {
+    grid-column: 1  ; /* Full width for the quantity section */
+}
+
+.related-products {
+    margin-top: 20px;
+}
+
+.related-products h2 {
+    font-size: 20px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.related-products {
+    margin-top: 20px;
+    text-align: center; /* Center the heading and content */
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center; /* Center the product cards */
+    gap: 20px; /* Space between the cards */
+}
+
+.related-product {
+    width: 30%; /* Adjust width as needed */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> / <a href="bloc_note.html">Bloc_Note</a> 
+        </nav>
+    </header>
+    
+    <main class="product-section">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="./images/notebookrouge.jpg" alt="Book Cover">
+            </div>
+            <div class="product-details">
+                <h1> NoteBook Classeur
+
+
+                </h1>
+                <div>
+                    <label for="randomNumber">Nombres de Vue sur ce site:</label>
+                    <span id="randomNumber" style="font-size: 15px;      font-weight: bold; color: red  ;">0</span>
+                </div>
+                <p class="description">
+                 REF:CM-08
+                <h4>NoteBook Classeur  //  Nombre de Page:120</h4> 
+
+                    <h4> </h4>
+           
+                <h4>Notebook Format : 23,5cm x 18cm</h4>
+                <h4>Couleur Disponible:Bleu,Noir,Rouge,Camel</h4>
+
+
+                    
+                                    </p>
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <div class="form-section">
+                    <div class="form-section">
+                        <form>
+                            
+                            <div class="quantity-section">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" id="quantity" value="1" min="1">
+                            </div>
+                            <button type="button" id="devis.html" onclick="location.href='devis.html'">Devis</button>
+
+                        </form>
+                    </div>
+                    
+                </div>
+                
+                <div class="product-meta">
+                    <p><strong id="Bloc_Note">Category:</strong> Bloc_Note</p>
+                  
+                </div>
+            </div>
+        </div>
+
+       
+    </main>
+
+    <div class="related-products">
+        <h1>Produits dans la même catégorie</h1>
+        <div class="product-grid">
+            <div class="related-product">
+                <a href="bloc_note1.html">
+
+                
+                            <img src="./images/notebook.png" alt="Related Product 1" style="width: 70%; height: auto;">
+                            </a>
+                            <p style="font-size: 20px;"> NoteBook de Luxe A5
+                            </p>
+                        </div>
+                 
+               
+                
+            <div class="related-product">
+                <a href="bloc_note3.html">
+
+                <img src="./images/bloc_note_ecologique-removebg-preview.png" alt="Related Product 2" style="width: 50%; height: auto;">
+          </a>
+                <p style="font-size: 20px;">Bloc Note Ecologique Multicouleurs Avec Stylo
+                </p>
+            </div>
+            <div class="related-product">
+                <a href="bloc_note6.html">
+
+                <img src="./images/notebookcont.jpg" alt="Related Product 3"  style="width: 50%; height: auto;">
+                </a>
+                <p style="font-size: 20px;">    NoteBook A5 avec contour coloré
+
+
+
+                   </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 100) + 1; // Generates a number between 1 and 100
+        }
+    
+        function updateRandomNumber() {
+            const randomNumberElement = document.getElementById('randomNumber');
+            randomNumberElement.textContent = getRandomNumber();
+        }
+    
+        // Update the random number every 3 seconds (3000 milliseconds)
+        setInterval(updateRandomNumber, 3000);
+    
+        // Initial call to display a random number immediately on page load
+        updateRandomNumber();
+       
+    window.onload = function() {
+        const button = document.querySelector('button[type="submit"]');
+        button.classList.add('vibrate'); // Start vibration effect on load
+    };
+    document.getElementById('devis.html').addEventListener('click', function () {
+            // Récupérer les valeurs des champs
+            const quantity = document.getElementById('quantity').value;
+            const projectType = "Bloc Note"
+
+            // Naviguer vers la deuxième page en passant les paramètres dans l'URL
+            window.location.href = `devis.html?quantity=${quantity}&projectType=${encodeURIComponent(projectType)}`;
+        });
+    </script>
+    
+</body>
+</html>

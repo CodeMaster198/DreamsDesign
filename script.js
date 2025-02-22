@@ -39,54 +39,42 @@ document.addEventListener("DOMContentLoaded", () => {
 // Dictionnaire contenant les images pour chaque catégorie
 const imagesByCategory = {
   "grand-format": [
-    { src: "images/drapeaux.jpg", alt: "Grand Format 1" ,link:'grand_format.html'},
-    { src: "images/banderole.jpg", alt: "Grand Format 2",link:'grand_format.html' },
-    { src: "images/BANNIERE.jpeg", alt: "Petit Format 1",link:'grand_format.html' },
-    { src: "images/bienvenue.PNG", alt: "Petit Format 2" ,link:'grand_format.html'},
-    { src: "images/PANNEAU.PNG", alt: "Sacs 1" ,link:'grand_format.html'},
-    { src: "images/drapeaux.jpg", alt: "Sacs 2",link:'grand_format.html' },
-    { src: "images/banderole.jpg", alt: "Bloc Notes 1" ,link:'grand_format.html'},
-    { src: "images/PANNEAU.PNG", alt: "Stickers 1",link:'grand_format.html' },
-    { src: "images/BANNIERE.jpeg", alt: "Stickers 2",link:'grand_format.html' }
+    { src: "images/drapeaux.jpg", alt: "drapeaux", link: 'grand_format.html' },
+    { src: "images/banderole.jpg", alt: "banderole", link: 'grand_format.html' },
+    { src: "images/BANNIERE.jpeg", alt: "BANNIERE", link: 'grand_format.html' },
+    { src: "images/bienvenue.PNG", alt: "bienvenue", link: 'grand_format.html' },
+    { src: "images/PANNEAU.PNG", alt: "PANNEAU", link: 'grand_format.html' },
+    { src: "images/drapeaux.jpg", alt: "drapeaux", link: 'grand_format.html' },
+    { src: "images/banderole.jpg", alt: "banderole", link: 'grand_format.html' },
+    { src: "images/PANNEAU.PNG", alt: "PANNEAU", link: 'grand_format.html' },
+    { src: "images/BANNIERE.jpeg", alt: "BANNIERE", link: 'grand_format.html' }
   ],
   "petit-format": [
-    { src: "images/invitation.jpg", alt: "Petit Format 1",link:'petit_format.html' },
-    { src: "images/cv.png", alt: "Petit Format 2" ,link:'petit_format.html'},
-    { src: "images/calendrier.png", alt: "Petit Format 2",link:'petit_format.html' },
-    { src: "images/bienvenue.PNG", alt: "Bloc Notes 2",link:'petit_format.html' },
-    { src: "images/catalogue.png", alt: "Bloc Notes 2" ,link:'petit_format.html'},
-    { src: "images/flyer-eco-2.jpg", alt: "Bloc Notes 2" ,link:'petit_format.html'},
-
-
-
-
-
+    { src: "images/invitation.jpg", alt: "invitation", link: 'petit_format.html' },
+    { src: "images/cartes.png", alt: "cartes", link: 'petit_format.html' },
+    { src: "images/calendrier.jpg", alt: "calendrier", link: 'petit_format.html' },
+    { src: "images/bienvenue.PNG", alt: "bienvenue", link: 'petit_format.html' },
+    { src: "images/catalogue.jpg", alt: "catalogue", link: 'petit_format.html' },
+    { src: "images/flyer-eco-2.jpg", alt: "flyer-eco-2", link: 'petit_format.html' }
   ],
- 
   "bloc-notes": [
-    { src: "images/images.jpg", alt: "Bloc Notes 1" ,link:'bloc_note.html'},
-    { src: "images/bloc_note.jpg", alt: "Bloc Notes 1",link:'bloc_note.html' },
-    { src: "images/bloc_note_bois.jpg", alt: "Bloc Notes 1",link:'bloc_note.html' },
-    { src: "images/bloc_note_ecologique-removebg-preview.png", alt: "Bloc Notes 1",link:'bloc_note.html' },
-    { src: "images/notepoche.jpg", alt: "Bloc Notes 1",link:'bloc_note.html'},
-    { src: "images/notebook.png", alt: "Bloc Notes 1",link:'bloc_note.html' },
-    { src: "images/notebookcont.jpg", alt: "Bloc Notes 1",link:'bloc_note.html' },
-
-
-
-
-
-
- 
+    { src: "images/images.jpg", alt: "images", link: 'bloc_note.html' },
+    { src: "images/bloc_note.jpg", alt: "bloc_note", link: 'bloc_note.html' },
+    { src: "images/bloc_note_bois.jpg", alt: "bloc_note_bois", link: 'bloc_note.html' },
+    { src: "images/bloc_note_ecologique-removebg-preview.png", alt: "bloc_note_ecologique-removebg-preview", link: 'bloc_note.html' },
+    { src: "images/notepoche.jpg", alt: "notepoche", link: 'bloc_note.html' },
+    { src: "images/notebook.png", alt: "notebook", link: 'bloc_note.html' },
+    { src: "images/notebookcont.jpg", alt: "notebookcont", link: 'bloc_note.html' }
   ],
   "papier": [
-    { src: "images/papier.png", alt: "Stickers 1" ,link:'papier.html' },
-    { src: "images/bristol250gr.jpg", alt: "Stickers 1",link:'papier.html' },
-    { src: "images/couche250gr.png", alt: "Stickers 1",link:'papier.html' },
-    { src: "images/chemise-bristol.JPG", alt: "Stickers 1",link:'papier.html' },
-
+    { src: "images/papier.png", alt: "papier", link: 'papier.html' },
+    { src: "images/bristol250gr.jpg", alt: "bristol250gr", link: 'papier.html' },
+    { src: "images/couche250gr.png", alt: "couche250gr", link: 'papier.html' },
+    { src: "images/chemise-bristol.JPG", alt: "chemise-bristol", link: 'papier.html' }
   ]
 };
+
+
 // script.js
 // Vous pouvez ajouter des fonctionnalités interactives ici, si nécessaire
 document.querySelector('.contact-btn').addEventListener('click', () => {

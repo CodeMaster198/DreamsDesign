@@ -263,8 +263,11 @@
           <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
             <i class="icon bi bi-geo-alt flex-shrink-0"></i>
             <div>
-              <h3>Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <h3>Adresse</h3>
+              <p>22,Cité Bechir Sfar,Beb El Khadhra,Tunis
+                2,Cité Bougatfa,Ezzahrouni
+                
+                </p>
             </div>
           </div>
         </div><!-- End Info Item -->
@@ -273,8 +276,8 @@
           <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
             <i class="icon bi bi-telephone flex-shrink-0"></i>
             <div>
-              <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
+              <h3>Contact</h3>
+              <p>+216 56885263</p>
             </div>
           </div>
         </div><!-- End Info Item -->
@@ -283,8 +286,8 @@
           <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
             <i class="icon bi bi-envelope flex-shrink-0"></i>
             <div>
-              <h3>Email Us</h3>
-              <p>info@example.com</p>
+              <h3>Email </h3>
+              <p>rochdi-dreams2@hotmail.fr</p>
             </div>
           </div>
         </div><!-- End Info Item -->
@@ -293,40 +296,194 @@
           <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
             <i class="icon bi bi-clock flex-shrink-0"></i>
             <div>
-              <h3>Opening Hours<br></h3>
-              <p><strong>Mon-Sat:</strong> 11AM - 23PM; <strong>Sunday:</strong> Closed</p>
+              <h3>Heure Ouverture<br></h3>
+              <p><strong>Lun-Sam:</strong> 8:00 - 18:00; <strong>Dimache:</strong> Ferme</p>
             </div>
           </div>
         </div><!-- End Info Item -->
 
       </div>
 
-      <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
-        <div class="row gy-4">
-
-          <div class="col-md-6">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-          </div>
-
-          <div class="col-md-6 ">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-          </div>
-
-          <div class="col-md-12">
-            <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-          </div>
-
-          <div class="col-md-12">
-            <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-          </div>
-
-          <div class="col-md-12 text-center">
-            
-            <button type="submit" class="btn btn-success">Send Message</button>
-          </div>
-
+      <form action="forms/contact.php" method="post" class="php-email-form" enctype="multipart/form-data">
+        <!-- Choix entre Société ou Particulier -->
+        <h3>Société *</h3>
+        <div>
+            <label>
+              Société    <input type="radio" name="type_client" value="société" onclick="toggleRaisonSociale(true)"required> 
+            </label>
+            <label>
+              Particulier   <input type="radio" name="type_client" value="particulier" onclick="toggleRaisonSociale(false)" required> 
+            </label>
         </div>
-      </form><!-- End Contact Form -->
+    
+        <!-- Section Nom et Raison Sociale -->
+        <div>
+            <label for="nom_prenom">Nom & Prénom *</label>
+            <input type="text" id="nom_prenom" name="nom_prenom" class="form-control" placeholder="Entrez votre nom et prénom" required>
+        </div>
+         <div id="raison-sociale-section" style="display: none;">
+          
+            <label for="raison_social">Raison Sociale</label>
+            <input type="text" id="raison_social" name="raison_social" class="form-control" placeholder="Entrez la raison sociale">
+        </div>
+    
+        <!-- Section Email et Téléphone -->
+        <div class="form-row">
+            <div>
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse email" required>
+            </div>
+            <div>
+                <label for="telephone">Téléphone *</label>
+                <input type="number" id="telephone" name="telephone" class="form-control" placeholder="Votre numéro de téléphone" required>
+            </div>
+        </div>
+    
+        <!-- Section Adresse -->
+        <div>
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Adresse ligne 1">
+        </div>
+          <div>
+            <label for="pays">Pays</label>
+            <select id="pays" name="pays" class="form-control">
+              <option value="Ariana">Ariana</option>
+<option value="Béja">Béja</option>
+<option value="Ben Arous">Ben Arous</option>
+<option value="Bizerte">Bizerte</option>
+<option value="Gabès">Gabès</option>
+<option value="Gafsa">Gafsa</option>
+<option value="Jendouba">Jendouba</option>
+<option value="Kairouan">Kairouan</option>
+<option value="Kasserine">Kasserine</option>
+<option value="Kebili">Kebili</option>
+<option value="Kef">Kef</option>
+<option value="Mahdia">Mahdia</option>
+<option value="Manouba">Manouba</option>
+<option value="Médenine">Médenine</option>
+<option value="Monastir">Monastir</option>
+<option value="Nabeul">Nabeul</option>
+<option value="Sfax">Sfax</option>
+<option value="Sidi Bouzid">Sidi Bouzid</option>
+<option value="Siliana">Siliana</option>
+<option value="Sousse">Sousse</option>
+<option value="Tataouine">Tataouine</option>
+<option value="Tozeur">Tozeur</option>
+<option value="Tunis">Tunis</option>
+<option value="Zaghouan">Zaghouan</option>
+
+
+            </select>
+        </div>
+        <div class="form-row">
+            <div>
+                <label for="ville">Ville</label>
+                <input type="text" name="ville" class="form-control" placeholder="Manouba">
+            </div>
+          
+        </div>
+      
+    
+        <!-- Section Devis Détails -->
+        <h3>Devis Détails</h3>
+        <div>
+            <label for="projectType">Type de projet *</label>
+            <select id="projectType" name="projectType" class="form-control" required>
+                <option value="" disabled selected>Sélectionnez</option>
+                <option value="Impression grand format">Impression grand format</option>
+                <option value="Flyers">Flyers</option>
+                <option value="Carte de Visite">Carte de Visite</option>
+                <option value="Invitations">Invitations</option>
+                <option value="tampon">Tampon</option>
+                <option value="Bloc Note">Bloc Note</option>
+                <option value="Porte Documents">Porte Documents</option>
+                <option value="Chemises Avocats">Chemises avocats</option>
+                <option value="Calendriers Personnalisés">Chemises avocats</option>
+                <option value="Catalogues">Catalogues</option>
+                <option value="Habillage Vitrine">Habillage Vitrine</option>
+                <option value="Habillage Vehicule">Habillage Vehicule</option>
+                <option value="Habillage Façade">Habillage Façade</option>
+                <option value="Baches,Bannieres,Banderoles">Baches,Bannieres,Banderoles</option>
+                <option value="Dreapeau">Drapeau</option>
+                <option value="Plaque Porte">Plaque Porte</option>
+                <option value="Affiches">Affiches</option>
+                <option value="Etiquettes Autocollant">Etiquette Autocollant</option>
+                <option value="Rame Offset 60gr Bleu">Rame Offset 60gr Bleu</option>
+<option value="Rame Offset 60gr Blanc">Rame Offset 60gr Blanc</option>
+<option value="Rame Offset 60gr Vert">Rame Offset 60gr Vert</option>
+<option value="Rame Offset 60gr Jaune">Rame Offset 60gr Jaune</option>
+<option value="Rame Offset 60gr Rose">Rame Offset 60gr Rose</option>
+<option value="Rame Offset 80gr Blanc">Rame Offset 80gr Blanc</option>
+<option value="Papier Bristol 170gr">Papier Bristol 170gr</option>
+<option value="Papier Bristol 250gr">Papier Bristol 250gr</option>
+<option value="Papier Bristol 300gr">Papier Bristol 300gr</option>
+<option value="Rame NCR Blanc">Rame NCR Blanc</option>
+<option value="Rame NCR Jaune">Rame NCR Jaune</option>
+<option value="Rame NCR Vert">Rame NCR Vert</option>
+<option value="Rame NCR Rose">Rame NCR Rose</option>
+<option value="Papier Couché 130gr">Papier Couché 130gr</option>
+<option value="Papier Couché 170gr">Papier Couché 170gr</option>
+<option value="Papier Couché 250gr">Papier Couché 250gr</option>
+<option value="Papier Couché 300gr">Papier Couché 300gr</option>
+<option value="Papier Couché 350gr">Papier Couché 350gr</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <option value="Cartes de visite">Cartes de visite</option>
+                <option value="Autre">Autre</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <div>
+                <label for="largeur">Largeur (en centimetre) *</label>
+                <input type="number" id="largeur" name="largeur" class="form-control" placeholder="Largeur (en centimetre)" required>
+            </div>
+            <div>
+                <label for="hauteur">Hauteur (en centimetre) *</label>
+                <input type="number" id="hauteur" name="hauteur" class="form-control" placeholder="Hauteur (en centimetre)" required>
+            </div>
+        </div>
+        <div class="form-row">
+          <div>
+              <label for="quantity">Quantite</label>
+              <input type="number" id="quantity" name="quantity" class="form-control" placeholder="Quantité">
+            </div>
+          
+      </div>
+        <div class="form-row">
+          <div>
+              <label for="Commentaire">Commetaire</label>
+              <textarea name="text_grand" class="form-control" placeholder="Commentaire" rows="3"></textarea>
+            </div>
+          
+      </div>
+        <div>
+          <label for="fichiers">Fichiers (25 Mo Maximum)</label>
+          <input type="file" id="fichiers" name="fichiers[]" class="form-control" accept=".jpg,.png,.pdf" multiple>
+        </div>
+    
+        <!-- Bouton Envoyer -->
+        <div>
+            <button type="submit" class="btn btn-success">Envoyer</button>
+        </div>
+    </form>
+    
+    
 
     </div>
 
@@ -389,6 +546,7 @@
   </footer>
     
   </body>
+  </html>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
@@ -402,4 +560,83 @@
     <script src="script.js"></script>
   
   
-  </html>
+
+    <script>
+      // Fonction pour basculer la visibilité de la section 'raison sociale'
+      function toggleRaisonSociale(show) {
+          const raisonSocialeSection = document.getElementById('raison-sociale-section');
+          if (show) {
+              raisonSocialeSection.style.display = 'block';
+          } else {
+              raisonSocialeSection.style.display = 'none';
+          }
+      }
+  
+      // Vérifie si le paramètre "showAlert" existe dans l'URL
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('showAlert')) {
+          alert("Message envoyé avec succès ! Nos agents vont bientôt vous contacter !");
+          // Supprimer le paramètre de l'URL sans rafraîchir la page
+          window.history.replaceState(null, null, window.location.pathname);
+      }
+  
+      // Fonction pour récupérer un paramètre spécifique de l'URL
+      function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+      }
+  
+      // Fonction pour remplir les champs du formulaire avec les données de l'URL
+      function populateForm() {
+          const urlParams = new URLSearchParams(window.location.search);
+  
+          // Récupérer les données de l'URL (produit et quantité)
+          const quantity = urlParams.get('quantity');  // Quantité
+          const product = urlParams.get('projectType'); // Type de projet
+  
+          // Remplir les champs dans le formulaire
+          if (product) {
+              document.getElementById('projectType').value = product; // Remplir le champ type de projet
+          }
+  
+          if (quantity) {
+              document.getElementById('quantity').value = quantity; // Remplir le champ quantité
+          }
+  
+          // S'assurer que la bonne option du select 'projectType' est sélectionnée
+          const typeSelect = document.getElementById('projectType');
+          for (let i = 0; i < typeSelect.options.length; i++) {
+              if (typeSelect.options[i].value === product) {
+                  typeSelect.selectedIndex = i;
+                  break;
+              }
+          }
+      }
+  
+      // Fonction pour ajuster les dimensions en fonction du type de projet sélectionné
+      document.addEventListener('DOMContentLoaded', function () {
+          // Remplissage du formulaire
+          populateForm();
+  
+          // Écouteur d'événement pour détecter la sélection du type de projet
+          document.getElementById('projectType').addEventListener('change', function() {
+              const largeur = document.getElementById('largeur');
+              const hauteur = document.getElementById('hauteur');
+              
+              // Afficher la valeur sélectionnée pour débogage
+              console.log("Type de projet sélectionné : " + this.value);
+  
+              // Si le produit est "Bloc Note", on ajuste les dimensions
+              if (this.value === 'Bloc Note') {
+                  console.log("Produit Bloc Note détecté, ajustement des dimensions.");
+                  largeur.value = 15;  // Largeur 15 cm pour un Bloc Note
+                  hauteur.value = 21;  // Hauteur 21 cm pour un Bloc Note
+              } else {
+                  // Réinitialisation si un autre produit est sélectionné
+                  largeur.value = '';
+                  hauteur.value = '';
+              }
+          });
+      });
+  </script>
+  

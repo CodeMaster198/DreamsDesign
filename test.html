@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue Réaliste sans rotation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #f5f5f5, #e5e5e5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .flipbook {
+      position: relative;
+      width: 90vw;  /* Réduit à 90% de la largeur de la fenêtre */
+      height: 75vh; /* Hauteur augmentée à 75% de la hauteur de la fenêtre */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .double-page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: opacity 0.6s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .double-page.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .page {
+      width: 50%; /* Chaque page occupe 50% de la largeur */
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .page.left {
+      transform-origin: left;
+    }
+
+    .page.right {
+      transform-origin: right;
+    }
+
+    /* Pour s'assurer que l'image couvre bien la page et s'ajuste selon la taille */
+    .page {
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #007BFF;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    button:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+    }
+
+    /* Media Queries pour des écrans plus petits */
+    @media (max-width: 768px) {
+      .flipbook {
+        width: 95vw;
+        height: 70vh; /* Augmenter la hauteur pour les tablettes */
+      }
+      .buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .flipbook {
+        width: 95vw;
+        height: 65vh; /* Ajustement pour les téléphones mobiles */
+      }
+      button {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="flipbook">
+    <div class="double-page visible">
+      <div class="page right" style="background-image: url('images/fond.PNG');"></div>
+      <div class="page left" style="background-image: url('images/dreamslogo..PNG');"></div>
+    </div>
+    <div class="double-page">
+      <div class="page left" style="background-image: url('images/3.jpg');"></div>
+      <div class="page right" style="background-image: url('images/4.jpg');"></div>
+    </div>
+    <div class="double-page">
+      <div class="page left" style="background-image: url('images/5.jpg');"></div>
+      <div class="page right" style="background-image: url('images/6.jpg');"></div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button id="prev">Précédent</button>
+    <button id="next">Suivant</button>
+  </div>
+
+  <script>
+    const doublePages = document.querySelectorAll('.double-page');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+  
+    let currentIndex = 0;
+  
+    function updateFlipbook() {
+      doublePages.forEach((page, index) => {
+        if (index === currentIndex) {
+          page.classList.add('visible');
+        } else {
+          page.classList.remove('visible');
+        }
+      });
+  
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === doublePages.length - 1;
+    }
+  
+    function flipPage(direction) {
+      const currentPage = doublePages[currentIndex];
+      const nextIndex = currentIndex + (direction === 'next' ? 1 : -1);
+  
+      if (nextIndex >= 0 && nextIndex < doublePages.length) {
+        const nextPage = doublePages[nextIndex];
+  
+        // Affiche simplement la double page suivante ou précédente, sans animation de rotation
+        nextPage.classList.add('visible');
+  
+        // Mise à jour de l'index actuel
+        currentIndex = nextIndex;
+        updateFlipbook();
+      }
+    }
+  
+    // Ajoutez les événements aux boutons
+    nextButton.addEventListener('click', () => flipPage('next'));
+    prevButton.addEventListener('click', () => flipPage('prev'));
+  
+    // Initialise le flipbook
+    updateFlipbook();
+  </script>
+</body>
+</html>
